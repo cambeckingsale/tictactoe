@@ -1,0 +1,57 @@
+:root {
+  --inside-border-colour: #000000;
+  --inside-border-width: 3em;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.header {
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  width: 100%;
+  height: 100%;
+}
+
+.player-container {
+  background-color: blanchedalmond;
+}
+
+.game-board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: brown;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3 1fr);
+  grid-template-rows: repeat(3 1fr);
+
+  background-color: var(--inside-border-colour);
+  grid-gap: var(--inside-border-width);
+}
+
+.game-space {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: brown;
+  color: #ff7f5b;
+  font-size: 2.5rem;
+}
