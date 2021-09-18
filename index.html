@@ -7,49 +7,74 @@
 
   <script src="js/script.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="/assets/imgs/toe-32px.png">
+  <link href="https://fonts.googleapis.com/css2?family=Titan+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
 
   <title>tic-tac-toe</title>
 </head>
 <body>
   <div class="game-container">
     <div class="player-container">
-
+      <div></div>
+      <div class="player-pieces-container">
+        <div class="player-pieces-box player-pieces-glow" id="ppb0">
+          <div class="player-pieces" id="pps0">
+            <img id="pp00" class="player-piece" data-player="0" src="assets/imgs/tictac.svg" alt="tictac" draggable="true">
+            <img id="pp01" class="player-piece" data-player="0" src="assets/imgs/tictac.svg" alt="tictac" draggable="true">
+            <img id="pp02" class="player-piece" data-player="0" src="assets/imgs/tictac.svg" alt="tictac" draggable="true">
+            <img id="pp03" class="player-piece" data-player="0" src="assets/imgs/tictac.svg" alt="tictac" draggable="true">
+            <img id="pp04" class="player-piece" data-player="0" src="assets/imgs/tictac.svg" alt="tictac" draggable="true">
+          </div>
+        </div>
+      </div>
+      <div class="reset-button-container">
+        <button class="reset-button">Reset</button>
+      </div>
     </div>
     <div class="game-board-container">
       <div class="game-board" id="game-board">
-        <div class="game-space">
-        </div>
-        <div class="game-space">
-    
-        </div>
-        <div class="game-space">
-    
-        </div>
-        <div class="game-space">
-    
-        </div>
-        <div class="game-space">
-    
-        </div>
-        <div class="game-space">
-    
-        </div>
-        <div class="game-space">
-    
-        </div>
-        <div class="game-space">
-    
-        </div>
-        <div class="game-space">
-    
-        </div>
+        <div class="game-space" id="0"></div>
+        <div class="game-space" id="1"></div>
+        <div class="game-space" id="2"></div>
+        <div class="game-space" id="3"></div>
+        <div class="game-space" id="4"></div>
+        <div class="game-space" id="5"></div>
+        <div class="game-space" id="6"></div>
+        <div class="game-space" id="7"></div>
+        <div class="game-space" id="8"></div>
+
       </div>
     </div>
     <div class="player-container">
-
+      <div class="playertwo-button-container">
+        <button class="playertwo-button playertwo-selected" id="human">Human</button>
+        <button class="playertwo-button" id="easy">Easy</button>
+        <button class="playertwo-button" id="hard">Hard</button>
+      </div>
+      <div class="player-pieces-container">
+        <div class="player-pieces-box"  id="ppb1">
+          <div class="player-pieces" id="pps1">
+            <img class="player-piece" data-player="1" id="pp10" src="assets/imgs/toe.svg" alt="toe" draggable="true">
+            <img class="player-piece" data-player="1" id="pp11" src="assets/imgs/toe.svg" alt="toe" draggable="true">
+            <img class="player-piece" data-player="1" id="pp12" src="assets/imgs/toe.svg" alt="toe" draggable="true">
+            <img class="player-piece" data-player="1" id="pp13" src="assets/imgs/toe.svg" alt="toe" draggable="true">
+            <img class="player-piece" data-player="1" id="pp14" src="assets/imgs/toe.svg" alt="toe" draggable="true">
+          </div>
+        </div>
+      </div>
+      <div>
+        <footer>
+          <a class='gh-link' href="https://github.com/cambeckingsale/tictactoe" target=”_blank” >
+              <img src="assets/imgs/GitHub-Mark-32px-red.png" width="22px" height="22px" alt="Github logo">
+              <div>cbeckingsale</div>
+              <div> art by https://github.com/jamesrbedwell/</div>
+          </a>
+      </footer>
+      </div>
     </div>
   </div>
-    
 </body>
 
 </html>
+

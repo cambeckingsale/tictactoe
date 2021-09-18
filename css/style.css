@@ -1,6 +1,12 @@
 :root {
   --inside-border-colour: #000000;
-  --inside-border-width: 3em;
+  --inside-border-width: 1em;
+
+  --primary-color: #a52a2a;
+  --secondary-color: #ffebcd;
+  --text-color: #ff7f5b;
+
+  --game-space-side: 200px;
 }
 
 body {
@@ -9,12 +15,11 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
 
+  font-family: 'Montserrat', sans-serif;
+
   width: 100vw;
   height: 100vh;
   margin: 0;
-}
-
-.header {
 }
 
 .game-container {
@@ -26,7 +31,46 @@ body {
 }
 
 .player-container {
-  background-color: blanchedalmond;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+
+  height: 100vh;
+
+  background-color: var(--secondary-color);
+}
+
+.player-pieces-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-pieces-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  width: var(--game-space-side);
+  height: calc(2.5 * var(--game-space-side));
+}
+
+.player-pieces-glow {
+  border: 0.25em solid var(--primary-color);
+  border-radius: 1em;
+  box-shadow: 0 0 5px 5px var(--primary-color);
+}
+
+.player-pieces {
+  display: grid;
+  grid-template-rows: repeat(5 1fr);
+}
+
+.player-piece {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-board-container {
@@ -34,13 +78,13 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: brown;
+  background-color: var(--primary-color);
 }
 
 .game-board {
   display: grid;
-  grid-template-columns: repeat(3 1fr);
-  grid-template-rows: repeat(3 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 
   background-color: var(--inside-border-colour);
   grid-gap: var(--inside-border-width);
@@ -51,7 +95,117 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-color: brown;
-  color: #ff7f5b;
+  background-color: var(--primary-color);
   font-size: 2.5rem;
+  width: var(--game-space-side);
+  height: var(--game-space-side);
+}
+
+.highlight-space {
+  opacity: 0.8;
+}
+
+.game-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+
+  font-family: 'Titan One', sans-serif;
+  font-size: 10em;
+  color: var(--text-color);
+
+  animation: growText 0.55s;
+}
+
+.game-result img {
+  background-color: var(--text-color);
+  width: var(--game-space-side);
+  height: var(--game-space-side);
+  border-radius: 50%;
+}
+
+@keyframes growText {
+  from {
+    transform: scale(0) translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: scale(1) translate(-50%, -50%) rotate(-10deg);
+  }
+}
+
+.reset-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-button {
+  width: var(--game-space-side);
+  padding: 0.25em;
+
+  font-family: 'Titan One', sans-serif;
+  font-size: 1.5em;
+
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+
+  border: 0.25em solid var(--text-color);
+  border-radius: 1em;
+}
+
+.reset-button:hover {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+
+.playertwo-button-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.playertwo-button {
+  width: calc(0.55 * var(--game-space-side));
+  padding: 0.25em;
+
+  font-family: 'Titan One', sans-serif;
+  font-size: 1.25em;
+
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+
+  border: 0.25em solid var(--text-color);
+  border-radius: 1em;
+}
+
+.playertwo-selected {
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.gh-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 1em;
+
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.75em;
 }
